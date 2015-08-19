@@ -95,21 +95,15 @@ var HeroTable = React.createClass({
           cell={<TextCell data={dataList} />}
         />
         <Column
-          header="DOB"
-          width={400}
-          columnKey="date"
-          cell={<TextCell data={dataList} />}
-        />
-        <Column
           flexGrow={1}
           columnKey="city"
           header="City"
-          width={400}
+          width={200}
           cell={<TextCell data={dataList} />}
         />
         <Column
           columnKey="bs"
-          header="BS!"
+          header="Interests"
           width={300}
           cell={<TextCell data={dataList} />}
         />

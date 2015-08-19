@@ -26,8 +26,13 @@ var FILES_TO_READ = [
   },
   {
     path: path.join(PROJECT_ROOT, 'src/FixedDataTableColumnGroupNew.react.js'),
-    name: 'ColumnGroup',
+    name: 'Column Group',
     markdownFileName: 'ColumnGroupAPI.md'
+  },
+  {
+    path: path.join(PROJECT_ROOT, 'src/FixedDataTableCellDefault.react.js'),
+    name: 'Default Cell',
+    markdownFileName: 'CellDefaultAPI.md'
   }
 ];
 
