@@ -2,20 +2,12 @@
 
 require('./base.less');
 
-var Constants = require('./Constants');
-var HomePage = require('./home/HomePage');
-var TableAPIPage = require('./docs/TableAPIPage');
-var ColumnAPIPage = require('./docs/ColumnAPIPage');
-var ColumnGroupAPIPage = require('./docs/ColumnGroupAPIPage');
-var ExamplesPage = require('./examples/ExamplesPage');
+var Router = require('react-router');
+var {RouteHandler} = Router;
+
 var React = require('react');
 
 var faviconURL = require('./images/favicon.png');
-
-var APIPages = Constants.APIPages;
-var ExamplePages = Constants.ExamplePages;
-var OtherPages = Constants.OtherPages;
-var Pages = Constants.Pages;
 
 var IndexPage = React.createClass({
   statics: {
@@ -55,6 +47,7 @@ var IndexPage = React.createClass({
           <base target="_blank" />
         </head>
         <body>
+
           {this.state.renderPage && this._renderPage()}
 
           <script dangerouslySetInnerHTML={browserInitScriptObj} />
@@ -67,29 +60,7 @@ var IndexPage = React.createClass({
   },
 
   _renderPage() {
-    switch (this.props.location) {
-      case OtherPages.HOME.location:
-        return <HomePage />;
-      case APIPages.TABLE_API.location:
-        return <TableAPIPage />;
-      case APIPages.COLUMN_API.location:
-        return <ColumnAPIPage />;
-      case APIPages.COLUMNGROUP_API.location:
-        return <ColumnGroupAPIPage />;
-    }
-
-    for (var key in ExamplePages) {
-      if (ExamplePages.hasOwnProperty(key) &&
-        ExamplePages[key].location === this.props.location) {
-        return <ExamplesPage example={ExamplePages[key]} />;
-      }
-    }
-
-    throw new Error(
-      'Page of location ' +
-        JSON.stringify(this.props.location) +
-        ' not found.'
-    );
+    return <RouteHandler />
   },
 
   componentDidMount() {

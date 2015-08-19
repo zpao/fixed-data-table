@@ -1,11 +1,15 @@
 "use strict";
 
 var React = require('react');
-var IndexPage = require('./IndexPage');
+var Router = require('react-router');
 
-React.render(
-  <IndexPage
-    {...window.INITIAL_PROPS}
-  />,
-  document
-);
+var routes = require('./routes');
+
+Router.run(routes, Router.HistoryLocation, (Page) => {
+  React.render(
+    <Page
+      {...window.INITIAL_PROPS}
+    />,
+    document
+  );
+});
