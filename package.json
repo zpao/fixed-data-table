@@ -4,8 +4,8 @@
   "description": "A React table component designed to allow presenting thousands of rows of data.",
   "main": "main.js",
   "peerDependencies": {
-    "react": ">=0.13.0 <0.15.0 || ^0.14.0-beta3",
-    "react-dom": ">=0.14.0 <0.15.0 || ^0.14.0-beta3"
+    "react": "^0.15.0",
+    "react-dom": "^0.15.0"
   },
   "dependencies": {
     "fbjs": "^0.8.2"
@@ -30,6 +30,7 @@
     "gulp-header": "^1.8.2",
     "gulp-postcss": "^6.1.1",
     "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.7",
     "html-loader": "^0.2.3",
     "less": "^2.2.0",
     "less-loader": "^2.0.0",
@@ -44,7 +45,8 @@
     "style-loader": "^0.8.3",
     "url-loader": "^0.5.5",
     "webpack": "^1.8.3",
-    "webpack-dev-server": "^1.8.0"
+    "webpack-dev-server": "^1.8.0",
+    "webpack-stream": "^3.2.0"
   },
   "scripts": {
     "site-dev-server": "./build_helpers/startSiteDevServer.sh",
